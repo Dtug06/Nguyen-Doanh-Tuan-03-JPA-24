@@ -11,6 +11,7 @@ void searchBookByName(Book books[], int bookCount);
 void sortBooksByPrice(Book books[], int bookCount,int choice );
 void saveData(Book books[], int bookCount, const char* filename);
 void loadData(Book books[], int *bookCount, const char* filename);
-int validateBook(Book books[], int bookCount, Book *book);
+int validateBook(Book books[], int bookCount, char* name, char* author, char* category, int price, int currentIndex);
+void clearFileData(const char* filename) ;
  
 

@@ -8,8 +8,7 @@ typedef struct {
     char name[100];
     char author[50];
     int price;
-    char category[50];
-    int isDeleted;
+    char category[50]; 
 } Book;
 
 #endif
