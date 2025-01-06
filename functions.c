@@ -34,28 +34,28 @@ void displayBooks(Book books[], int bookCount) {
 
 int validateBook(Book books[], int bookCount, char* name, char* author, char* category, int price, int currentIndex) {
     if (strlen(name) > 50) {
-        printf("Error: Book name cannot exceed 50 characters.\n");
+        printf("Loi! Ten khong the vuot qua 50 ky tu .\n");
         return 0;
     }
 
     if (strlen(author) > 50) {
-        printf("Error: Author name cannot exceed 50 characters.\n");
+        printf("Loi! Tac gia khong vuot qua 50 ky tu .\n");
         return 0;
     }
 
     if (strlen(category) > 50) {
-        printf("Error: Book category cannot exceed 50 characters.\n");
+        printf("Loi! Ten the loai khong vuot qua 50 ky tu .\n");
         return 0;
     }
 
     if (price < 0) {
-        printf("Error: Book price cannot be negative.\n");
+        printf("Loi! Gia sach khong duoc am .\n");
         return 0;
     }
 
     for (int i = 0; i < bookCount; i++) {
         if (i != currentIndex && strcmp(books[i].name, name) == 0) {
-            printf("Error: Book name already exists.\n");
+            printf("Loi ! Ten sach khong duoc trung lap .\n");
             return 0;
         }
     }
@@ -168,10 +168,7 @@ void loadData(Book books[], int *bookCount, const char* filename) {
         fread(bookCount, sizeof(int), 1, file);
         fread(books, sizeof(Book), *bookCount, file);
         fclose(file);
-        printf("Books loaded successfully from %s\n", filename);
-    } else {
-        printf("No data file found. Starting with an empty book list.\n");
-    }
+    } 
 }
 
 void updateBook(Book books[], int bookCount) {
@@ -184,7 +181,7 @@ void updateBook(Book books[], int bookCount) {
     getchar();
 
     if (id <= 0 || id > bookCount) {
-        printf("Invalid book ID.\n");
+        printf("Id khong ton tai .\n");
         return;
     }
 
@@ -361,15 +358,7 @@ void addBook(Book books[], int *bookCount) {
     books[(*bookCount)++] = newBook;
     printf("Book added successfully!\n");
 }
-void clearFileData(const char* filename) {
-    FILE *file = fopen(filename, "w");
-    if (file != NULL) {
-        fclose(file);
-        printf("Data in file %s has been cleared successfully.\n", filename);
-    } else {
-        printf("Error clearing data in file %s.\n", filename);
-    }
-}
+
 
 
 

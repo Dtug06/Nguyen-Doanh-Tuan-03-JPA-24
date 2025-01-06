@@ -53,12 +53,8 @@ int main(int argc, char *argv[]) {
                 sortBooksByPrice(books, bookCount,sapXep);	
                 displayBooks(books, bookCount);
 			 	  
-                break;
-            case 7: //xoa du lieu cua file  
-             clearFileData("books.dat") ;
-             bookCount = 0;
-            break ; 
-            case 8 ://thoat  
+                break; 
+            case 7 ://thoat  
                 saveData(books, bookCount, "books.dat");
                 printf("Data saved. Exiting program.\n");              
                 return 0;
